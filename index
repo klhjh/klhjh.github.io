@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>开朗hjh</title>
+    <link rel="icon" type="image/-ico" href="https://x.imgs.ovh/x/2023/09/09/64fc24453bedc.png">
+  </head>
+  <script>
+    a=confirm("该页面暂无内容，是否进入布莱克man(klhjh.github.io/blkman)?");
+    if(a==true){
+    window.location.href="https://klhjh.github.io/blkman/";
+    }
+    else{
+    window.history.back(-1);
+    }
+  </script>
+</html>
