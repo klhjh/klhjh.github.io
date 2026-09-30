@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>评测方法 · 软件评鉴</title>
+<meta name="description" content="本站的软件评测方法说明：评测环境、评分维度与权重、评分换算规则、免责声明，以及如何新增一篇推荐。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230B0E14'/><rect x='11' y='11' width='10' height='10' fill='%235DCAA5' transform='rotate(45 16 16)'/></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="about">
+<div id="progress"></div>
+
+<header class="site">
+  <div class="wrap nav" id="nav"></div>
+</header>
+
+<main class="wrap">
+  <div style="max-width:760px;margin:0 auto;padding:56px 0 40px">
+
+    <div class="crumb" style="font-family:var(--mono);font-size:12px;color:var(--text-faint);margin-bottom:18px">关于本站 / methodology</div>
+    <h1 style="margin:0 0 18px;font-size:32px;font-weight:500;line-height:1.4">评测方法</h1>
+    <p style="margin:0;font-size:16px;color:var(--text-dim);line-height:1.8">
+      把软件推荐写成论文，不是为了显得严肃，而是为了让每一条结论都能被追溯：环境是什么、标准是什么、数据从哪来、哪一步是主观判断。
+    </p>
+
+    <div class="prose">
+      <h2 id="m-1">1 为什么采用论文体例</h2>
+      <p>常见的软件推荐有两类问题：一类只讲优点，读完不知道它有什么代价；另一类只给结论，读完不知道作者凭什么这么说。论文体例要求把"结论"和"得出结论的过程"分开写清楚，正好能治这两类毛病。</p>
+      <p>所以每篇评测都固定包含六个部分：引言交代问题背景，评测方法交代环境与评分权重，机制分析解释它为什么快或为什么好用，实测结果给可核对的数据，局限与风险给出代价，结论明确说明推荐给谁、不推荐给谁。</p>
+
+      <h2 id="m-2">2 评测环境</h2>
+      <p>除特别说明外，评测在真实的日常使用环境中完成，而不是专门搭建的测试台。这样做的好处是结论更接近普通用户的实际体验，代价是部分数据只能给出量级而非精确基准。</p>
+      <ul>
+        <li>测试平台以 Windows 桌面环境为主，涉及跨平台软件时会补充说明其它平台差异</li>
+        <li>软件版本以官方当前发布为准；评测时间会标注在每篇文章的发布信息中</li>
+        <li>硬件配置、文件规模等影响结果的变量，会在文内明确写出</li>
+      </ul>
+
+      <h2 id="m-3">3 评分维度与权重</h2>
+      <p>每篇评测的权重不一定相同，因为不同类型的软件看重的指标本来就不同——压缩工具不该和笔记软件用同一套权重。权重会在每篇文章的方法章节以表格列出。</p>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>含义</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>性能与体积</td><td>速度、资源占用、安装包大小等可测量指标</td></tr>
+          <tr><td>功能覆盖</td><td>是否覆盖该品类的核心需求，以及边界情况处理</td></tr>
+          <tr><td>易用性</td><td>上手成本、交互是否直觉、配置复杂度</td></tr>
+          <tr><td>生态与维护</td><td>更新频率、文档质量、开源程度、数据可迁移性</td></tr>
+        </tbody>
+      </table>
+      <p>综合评分由各维度分数按权重加权平均得出，保留一位小数，不做人工上调或下调。这意味着分数可能出现"某方面很差但总分不低"的情况，具体要看维度条形图而不是只看那个总分。</p>
+
+      <h2 id="m-4">4 关于数据与确定性</h2>
+      <div class="note">凡是没有把握给出精确数值的项目，本站只描述量级差异（例如"数十秒量级"），不编造精确基准数字。软件在不同硬件上的表现差异可能远大于软件之间的差异，任何单一数字都容易误导。</div>
+
+      <h2 id="m-5">5 链接与立场</h2>
+      <p>文内所有链接均指向软件开发者的官方网站或官方代码仓库，不包含返利、推广或分销参数。本站不因推荐任何软件获得收入。</p>
+
+      <h2 id="m-6">6 免责声明</h2>
+      <p>评测基于公开版本与个人长期使用体验，评分包含主观判断。软件的功能、授权方式与价格可能随时变化，请以官方网站为准。本站不承担因安装或使用文中软件而产生的任何后果，请自行评估安全性与合规性。</p>
+
+      <h2 id="m-7">7 如何新增一篇推荐</h2>
+      <p>本站为纯静态站点，全部内容集中在 <code style="font-family:var(--mono);font-size:13.5px;background:var(--surface);padding:2px 6px;border-radius:4px">assets/data.js</code> 一个文件里。新增一篇推荐的完整流程：</p>
+      <ol>
+        <li>打开 <span class="mono" style="font-size:13.5px">assets/data.js</span>，复制 <span class="mono" style="font-size:13.5px">POSTS</span> 数组中任意一个完整的 <span class="mono" style="font-size:13.5px">{ ... }</span> 内容块</li>
+        <li>粘贴到数组里，修改 slug、标题、摘要、标签、链接与正文</li>
+        <li>保存并刷新页面——首页、列表页、标签筛选、上下篇导航全部自动更新，无需改动其它文件</li>
+      </ol>
+      <p>正文部分是一组结构化区块，可用类型与写法都写在 <span class="mono" style="font-size:13.5px">data.js</span> 顶部的注释里。要改站名、作者、邮箱，同样在 <span class="mono" style="font-size:13.5px">data.js</span> 顶部的 <span class="mono" style="font-size:13.5px">SITE</span> 对象里修改即可。</p>
+
+      <h2 id="m-8">8 联系</h2>
+      <p>纠错、补充信息或推荐软件，欢迎来信：<a id="mail" href="#"></a></p>
+    </div>
+  </div>
+</main>
+
+<footer class="site" id="foot"></footer>
+
+<script src="assets/data.js"></script>
+<script>
+  (function () {
+    var a = document.getElementById('mail');
+    a.href = 'mailto:' + SITE.email;
+    a.textContent = SITE.email;
+  })();
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>
